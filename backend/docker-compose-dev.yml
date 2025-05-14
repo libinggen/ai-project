@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"    # FastAPI
+      - "5678:5678"    # debugpy（如果你用调试器）
+    volumes:
+      - ./app:/app/app  # 映射本地 app 目录到容器内 /app/app（可热更新）
